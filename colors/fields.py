@@ -11,9 +11,10 @@ class ColorField(models.CharField):
 	def __init__(self, *args, **kwargs):
 		kwargs['max_length'] = 6
 		super(ColorField, self).__init__(*args, **kwargs)
-		super(ColorField, self).validators.append(HexColorCodeValidator())
+		
 	
 	def formfield(self, **kwargs):
 		kwargs['widget'] = ColorPickerWidget(attrs={'autocomplete': 'off'})
 		return super(ColorField, self).formfield(**kwargs)
 
+	default_validators = [HexColorCodeValidator]
