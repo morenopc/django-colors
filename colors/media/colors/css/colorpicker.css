@@ -1,9 +1,7 @@
 .color-picker-preview {
     border:1px solid #ccc;
     height:23px;
-    left:122px;
-    position:absolute;
-    top:0;
+    position:relative;
     width:23px;
     -moz-border-radius:4px;
 }

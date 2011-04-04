@@ -13,6 +13,6 @@ class ColorField(models.CharField):
         super(ColorField, self).__init__(*args, **kwargs)
 
     def formfield(self, **kwargs):
-        kwargs['widget'] = ColorPickerWidget
+        kwargs['widget'] = ColorPickerWidget(attrs={'autocomplete': 'off'})
         return super(ColorField, self).formfield(**kwargs)
 
