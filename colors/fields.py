@@ -10,7 +10,7 @@ from colors.validators import HexColorCodeValidator
 class ColorField(models.CharField):
 	def __init__(self, *args, **kwargs):
 		kwargs['max_length'] = 6
-		self.validators.append(HexColorCodeValidator())
+		super(ColorField, self).validators.append(HexColorCodeValidator())
 		super(ColorField, self).__init__(*args, **kwargs)
 	
 	def formfield(self, **kwargs):
