@@ -1,5 +1,7 @@
 from django.db import models
 
+from colors.fields import ColorField
+
 class Color(models.Model):
 	"""
 	A unique color in the color library
