@@ -8,12 +8,15 @@ class ColorAdmin(admin.ModelAdmin):
 	"""
 	pass
 
+class ColorInline(admin.TabularInline):
+	model = ColorGroup.colors.through
+
 
 class ColorGroupAdmin(admin.ModelAdmin):
 	"""
 	A custom django admin interface for named color groups
 	"""
-	pass
+	inlines=[ColorInline,]
 	
 admin.site.register(Color, ColorAdmin)
 admin.site.register(ColorGroup, ColorGroupAdmin)
