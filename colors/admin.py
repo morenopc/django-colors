@@ -13,6 +13,7 @@ class ColorInline(admin.TabularInline):
 	
 	class Meta:
 		verbose_name = 'color'
+		verbose_name_plural = 'colors'
 
 
 class ColorGroupAdmin(admin.ModelAdmin):
