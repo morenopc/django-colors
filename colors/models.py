@@ -8,7 +8,7 @@ class Color(models.Model):
 	A unique color in the color library
 	"""
 	color = ColorField(_(u"color code"), unique=True)
-	classification = models.CharField(max_length=15, choices=COLOR_NAME_CHOICES, editable=False)
+	#classification = models.CharField(max_length=15, choices=COLOR_NAME_CHOICES, editable=False)
 	
 	def __unicode__(self):
 		return self.color
