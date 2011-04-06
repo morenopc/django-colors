@@ -10,13 +10,17 @@ class ColorAdmin(admin.ModelAdmin):
 
 class ColorInline(admin.TabularInline):
 	model = ColorGroup.colors.through
+	
+	class Meta:
+		verbose_name = 'color'
 
 
 class ColorGroupAdmin(admin.ModelAdmin):
 	"""
 	A custom django admin interface for named color groups
 	"""
-	inlines=[ColorInline,]
+	inlines = [ColorInline,]
+	exclude = ('colors',)
 	
 admin.site.register(Color, ColorAdmin)
 admin.site.register(ColorGroup, ColorGroupAdmin)
