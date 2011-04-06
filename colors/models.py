@@ -12,7 +12,7 @@ class Color(models.Model):
 	#classification = models.CharField(max_length=15, choices=COLOR_NAME_CHOICES, editable=False)
 	
 	def __unicode__(self):
-		return self.color
+		return self.name
 
 
 class ColorGroup(models.Model):
@@ -20,7 +20,7 @@ class ColorGroup(models.Model):
 	A named group of colors, e.g. 'Black & White' which contains
 	the FFF and 000 hex colors
 	"""
-	name = models.CharField(max_length=25)
+	name = models.CharField(max_length=25, help_text="Provide a descriptive name for the color group.")
 	colors = models.ManyToManyField("Color", related_name="color_groups")
 
 	def __unicode__(self):
